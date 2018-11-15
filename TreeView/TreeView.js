@@ -125,6 +125,9 @@
 
 
 `);
+GM_addStyle('@font-face{font-family:"iconfont-zfdev-filetree";src:url(data:font/truetype;charset=utf-8;base64,AAEAAAALAIAAAwAwR1NVQrD+s+0AAAE4AAAAQk9TLzI8fUhsAAABfAAAAFZjbWFws/QcPQAAAeQAAAGcZ2x5ZqQfxqgAAAOMAAABjGhlYWQTLAKJAAAA4AAAADZoaGVhB94DhQAAALwAAAAkaG10eBAAAAAAAAHUAAAAEGxvY2EBAgCUAAADgAAAAAptYXhwARcARQAAARgAAAAgbmFtZYx+aQAAAAUYAAADIXBvc3QPWfb4AAAIPAAAAEoAAQAAA4D/gABcBAAAAAAABAAAAQAAAAAAAAAAAAAAAAAAAAQAAQAAAAEAAEEtmIxfDzz1AAsEAAAAAADYBl9GAAAAANgGX0YAAP+ABAADgAAAAAgAAgAAAAAAAAABAAAABAA5AAkAAAAAAAIAAAAKAAoAAAD/AAAAAAAAAAEAAAAKAB4ALAABREZMVAAIAAQAAAAAAAAAAQAAAAFsaWdhAAgAAAABAAAAAQAEAAQAAAABAAgAAQAGAAAAAQAAAAAAAQQAAZAABQAIAokCzAAAAI8CiQLMAAAB6wAyAQgAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA5gfmegOA/4AAXAOAAIAAAAABAAAAAAAABAAAAAQAAAAEAAAABAAAAAAAAAUAAAADAAAALAAAAAQAAAFoAAEAAAAAAGIAAwABAAAALAADAAoAAAFoAAQANgAAAAgACAACAADmB+Yx5nr//wAA5gfmMeZ6//8AAAAAAAAAAQAIAAgACAAAAAMAAQACAAABBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAA0AAAAAAAAAAMAAOYHAADmBwAAAAMAAOYxAADmMQAAAAEAAOZ6AADmegAAAAIAAAAAADwAlADGAAAAAgAA/4wD9AN0AAsAHgAAAQYABxYAFzYANyYAEwEHBiIvAiY0NjIfAQE2MhYUAgDU/uUFBQEb1NQBGwUF/uU+/rYEChsKA6QJExoKkQE3ChoTA3QF/uXU1P7lBQUBG9TUARv+of62BAoKBKQKGhMJkQE3ChQaAAAACQAA/5QD1gM8ABUAGgAeACMAJwAsADAANAA4AAABFSM1MzUjNSMRIRUzNSMVIzUzFTM1Ex0BITUHITUhBR0BITUHITUhBR0BITUHITUhARUhNQchNSEB1urq6iQBDgIC6uoCEQHsJP5cAaT+OAHsJP5cAaT+OAHsJP5cAaT8cQHSOf6eAWIBDyvMJJ/9WCt7LNArewEMNmSaajrMNmSaajrANmSaajoDPdLSrIkAAAACAAD/gAQAA4AACwAXAAABHgEXDgEHLgEnPgE3BgAHFgAXNgA3JgACAL79BQX9vr79BQX9vtr+3wUFASHa2gEhBQX+3wNABf2+vv0FBf2+vv1FBf7f2tr+3wUFASHa2gEhAAAAAAASAN4AAQAAAAAAAAAVAAAAAQAAAAAAAQAXABUAAQAAAAAAAgAHACwAAQAAAAAAAwAXADMAAQAAAAAABAAXAEoAAQAAAAAABQALAGEAAQAAAAAABgAXAGwAAQAAAAAACgArAIMAAQAAAAAACwATAK4AAwABBAkAAAAqAMEAAwABBAkAAQAuAOsAAwABBAkAAgAOARkAAwABBAkAAwAuAScAAwABBAkABAAuAVUAAwABBAkABQAWAYMAAwABBAkABgAuAZkAAwABBAkACgBWAccAAwABBAkACwAmAh0KQ3JlYXRlZCBieSBpY29uZm9udAppY29uZm9udC16ZmRldi1maWxldHJlZVJlZ3VsYXJpY29uZm9udC16ZmRldi1maWxldHJlZWljb25mb250LXpmZGV2LWZpbGV0cmVlVmVyc2lvbiAxLjBpY29uZm9udC16ZmRldi1maWxldHJlZUdlbmVyYXRlZCBieSBzdmcydHRmIGZyb20gRm9udGVsbG8gcHJvamVjdC5odHRwOi8vZm9udGVsbG8uY29tAAoAQwByAGUAYQB0AGUAZAAgAGIAeQAgAGkAYwBvAG4AZgBvAG4AdAAKAGkAYwBvAG4AZgBvAG4AdAAtAHoAZgBkAGUAdgAtAGYAaQBsAGUAdAByAGUAZQBSAGUAZwB1AGwAYQByAGkAYwBvAG4AZgBvAG4AdAAtAHoAZgBkAGUAdgAtAGYAaQBsAGUAdAByAGUAZQBpAGMAbwBuAGYAbwBuAHQALQB6AGYAZABlAHYALQBmAGkAbABlAHQAcgBlAGUAVgBlAHIAcwBpAG8AbgAgADEALgAwAGkAYwBvAG4AZgBvAG4AdAAtAHoAZgBkAGUAdgAtAGYAaQBsAGUAdAByAGUAZQBHAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAHMAdgBnADIAdAB0AGYAIABmAHIAbwBtACAARgBvAG4AdABlAGwAbABvACAAcAByAG8AagBlAGMAdAAuAGgAdAB0AHAAOgAvAC8AZgBvAG4AdABlAGwAbABvAC4AYwBvAG0AAAAAAgAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAQIBAwEEAQUACXh1YW56aG9uZwdzaHV4aW5nCnVuc2VsZWN0ZWQAAAAA) format("truetype");font-weight:normal;font-style:normal;}.iconfont-zfdev-filetree{font-family:"iconfont-zfdev-filetree" !important;font-size:16px;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;}.icon-shuxing:before{content:"\\e67a";}.icon-xuanzhong:before{content:"\\e631";}.icon-unselected:before{content:"\\e607";}');
+
+
     /**
      * 设置内部log函数
      */
@@ -359,7 +362,7 @@
         let old = location.hash.split("&");
         let newArr = [];
         // 添加路径
-        path = path.substring(0, path.lastIndexOf("/"))
+        path = path.substring(0, path.lastIndexOf("/"));
         if (path === decodeURIComponent(parentPath)) {
             path = "/";
         }
@@ -473,7 +476,7 @@
         } else {
             return false;
         }
-    }
+    };
 
 
     /* ------------------------------------------ 获取百度数据 - LOCAL - END --------------------------------------------------------- */
@@ -660,7 +663,7 @@ owner-uk="" >
 
 
     // 载入CSS
-    require.loadCss('/sns/box-static/disk-share/pkg/plugin_aef2d24.css')
+    require.loadCss('/sns/box-static/disk-share/pkg/plugin_aef2d24.css');
 
     // 初始化 - 添加视图
     let treeHTML = '<div class="zfdev-tree-manager" id="zfdev-tree-manager" style="padding: 0 15px;"><div class="file-tree-container" style="overflow-y: auto; overflow-x: hidden;  height: 619px;"><ul class="treeview treeview-content"><li><div class="treeview-node   treeview-root _minus" _pl="0px" style="padding-left:0px"><span class="treeview-node-handler"><em class="b-in-blk plus icon-operate minus"></em><dfn class="b-in-blk treeview-ic"></dfn><span class="treeview-txt" node-path="/" node-isdir="1" owner-uk="">ZFDev Manager</span></span></div><ul class="treeview treeview-root-content treeview-content" _pl="15px"></ul></li></ul></div></div>';
@@ -832,7 +835,7 @@ owner-uk="" >
             display: ''
         }); // ？？？
 
-    })
+    });
 
     /**
      * 初始化视图。获取首页文件列表，并生成文件树视图
