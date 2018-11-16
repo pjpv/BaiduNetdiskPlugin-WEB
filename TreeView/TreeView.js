@@ -577,7 +577,7 @@ GM_addStyle('@font-face{font-family:"iconfont-zfdev-filetree";src:url(data:font/
 <li>
 	<div class="treeview-node ${item.isdir ? '' : 'treenode-empty'}    " _pl="${level*15}px" style="padding-left:${level*15}px">
 		<span class="treeview-node-handler" style="    margin-right: ${-((level-2)*15)}px;" >
-            ${item.isdir ? '' : '<span style="position: absolute;left: 20px;color: #888;padding-left: '+((level-1)*15)+'px">'+index+'.</span>'}
+            ${item.isdir ? '' : '<span style="position: absolute;left: 20px;color: #888;padding-left: '+((level-1)*15-10)+'px">'+index+'.</span>'}
 			<em class="b-in-blk plus icon-operate"></em>
 			${item.isdir ? '<dfn class="b-in-blk treeview-ic">' : getIconHTML(item.server_filename)}
 			</dfn>
@@ -1033,63 +1033,38 @@ owner-uk="" >
 
     /* ------------------------------------------ 生成图片 - START --------------------------------------------------------- */
     function generateImage() {
-        //要转换为图片的dom对象
-        var element = $('#zfdev-tree-manager .file-tree-container > .treeview-content ');
-
-        // 克隆元素用于生成完成图片
-        var copyDom = element.clone();
-        copyDom.css("background", "white"); // 设置背景
-        copyDom.addClass("zfdev-tree-manager");
-
-        copyDom.find(".treeview-time").remove(); // 删除日期
-        copyDom.attr('id', "gengrate-image-copy-dom"); // 设置id
-        copyDom.width("max-content"); // 设置宽度为内容的宽度
-        $(copyDom).find('.treeview-node-on').removeClass('treeview-node-on'); //去除选中状态
-
-        $('body').append(copyDom); // 添加到Body
-
-        // 计算框高，设置未偶数。（奇数会导致transform后模糊，未完成解决图片模糊问题）
-        let w = copyDom.width();
-        w = w % 2 ? w + 1 : w;
-        copyDom.width(w + "px");
-        let h = copyDom.height();
-        h = h % 2 ? h + 1 : h;
-        h = h + 16; // 预留水印位置
-        copyDom.height(h + "px");
-
-
 
         // img元素
         let $img = $("#zfdev-tree-manager-img");
         if ($img.length === 0) {
             let imgHTML = `
-<div id="zfdev-treeview-img-div" style="">
-	<img id="zfdev-tree-manager-img" src="" style="height: auto;width: auto;max-width: 100%;max-height: 100%;display: block;margin: 0 auto;">
-	<div style="display:block;">
-	<a class="g-button" id="zfdev-treeview-img-zoom" href="javascript:;"
-	title="放大" style="display:none;top:65px;">
-		<span>
-			<em class="icon icon-picpre-enlarge" title="放大" style="">
-			</em>
-		</span>
-	</a>
-	<a class="g-button" id="zfdev-treeview-img-download" href="javascript:;"
-	title="下载" style="display:none;top:25px;">
-		<span>
-			<em class="icon icon-download" title="下载" style="">
-			</em>
-		</span>
-	</a>
-	<a class="g-button" id="zfdev-treeview-img-close" href="javascript:;"
-	title="关闭" style="top:-15px;color:#666;">
-		<span>
-			<em class="icon icon-close" title="关闭" style="">
-			</em>
-		</span>
-</a>
-</div>
-</div>
-`;
+        <div id="zfdev-treeview-img-div" style="">
+        <img id="zfdev-tree-manager-img" src="" style="height: auto;width: auto;max-width: 100%;max-height: 100%;display: block;margin: 0 auto;">
+        <div style="display:block;">
+        <a class="g-button" id="zfdev-treeview-img-zoom" href="javascript:;"
+        title="放大" style="display:none;top:65px;">
+        <span>
+            <em class="icon icon-picpre-enlarge" title="放大" style="">
+            </em>
+        </span>
+        </a>
+        <a class="g-button" id="zfdev-treeview-img-download" href="javascript:;"
+        title="下载" style="display:none;top:25px;">
+        <span>
+            <em class="icon icon-download" title="下载" style="">
+            </em>
+        </span>
+        </a>
+        <a class="g-button" id="zfdev-treeview-img-close" href="javascript:;"
+        title="关闭" style="top:-15px;color:#666;">
+        <span>
+            <em class="icon icon-close" title="关闭" style="">
+            </em>
+        </span>
+        </a>
+        </div>
+        </div>
+        `;
             $("body").prepend($(imgHTML));
             $img = $('#zfdev-tree-manager-img');
             /**
@@ -1115,26 +1090,58 @@ owner-uk="" >
             * 放大(新窗口查看)
             */
             $('#zfdev-treeview-img-zoom').click(function(){
-                let w = window.open("");
+                let w = window.open('https://zfdev.com');
                 w.document.write($("#zfdev-tree-manager-img")[0].outerHTML);
                 w.document.body.style.background="dimgrey";
+                w.document.title = yunData.FILENAME;
+                w.document.title += " 预览图";
             });
 
+        }else{
+            $('#zfdev-treeview-img-download').css('display', 'none');
+            $('#zfdev-treeview-img-zoom').css('display', 'none');
+            $('#zfdev-treeview-img-div').height('');
         }
         // loading图片
         $img[0].src = "/box-static/system-core/system/uiService/tip/img/loading-white_e1bf1df.gif";
+
+
+        //要转换为图片的dom对象
+        var element = $('#zfdev-tree-manager .file-tree-container > .treeview-content ');
+
+        // 克隆元素用于生成完成图片
+        var copyDom = element.clone();
+        copyDom.css("background", "white"); // 设置背景
+        copyDom.addClass("zfdev-tree-manager");
+
+        copyDom.find(".treeview-time").remove(); // 删除日期
+        copyDom.attr('id', "gengrate-image-copy-dom"); // 设置id
+        copyDom.width("max-content"); // 设置宽度为内容的宽度
+        $(copyDom).find('.treeview-node-on').removeClass('treeview-node-on'); //去除选中状态
+
+        $('body').append(copyDom); // 添加到Body
+
+        // 计算框高，设置未偶数。（奇数会导致transform后模糊，未完成解决图片模糊问题）
+        let w = copyDom.width();
+        w = w % 2 ? w + 1 : w;
+        copyDom.width(w + "px");
+        let h = copyDom.height();
+        h = h % 2 ? h + 1 : h;
+        h = h + 16; // 预留水印位置
+        copyDom.height(h + "px");
+
         // 生成图片
         html2image(copyDom, $img[0]);
 
         // 设置水印
         function setWatermark(canvas, text, fsz) {
             let context = canvas.getContext('2d');
-            context.font = 'bold 15px Arial'; // 字体
+            context.font = 'bold ' + fsz + 'px Arial'; // 字体
             // context.textAlign = 'center';
             context.textBaseline = 'bottom';
             context.fillStyle = '#ccc'; // 填充颜色
             context.strokeStyle = '#ccc'; // 线条颜色
-            context.fillText(text, context.canvas.width - 180, context.canvas.height - 5);
+            context.fillText(text, context.canvas.width - 150, context.canvas.height - 2);
 
             context.lineWidth = 2; //设置边框宽度
             context.strokeRect(0, 0, context.canvas.width, context.canvas.height); //加粗边框矩形
@@ -1150,7 +1157,7 @@ owner-uk="" >
                 allowTaint: false,
                 taintTest: false,
             }).then(function(canvas) {
-                setWatermark(canvas, "由ZFDev Manager生成", 60);
+                setWatermark(canvas, "由 ZFDev Manager 生成", 10);
                 var imageData = canvas.toDataURL(1); // 转为DATA URL格式
                 image.src = imageData;
                 source.remove(); // 删除复制的元素
@@ -1164,7 +1171,7 @@ owner-uk="" >
         }
     }
     // 添加“生成文件树图片”按钮
-    let generateImageHTML = '<a class="g-button" data-button-id="zfdev-filetree-image" id="share-zfdev-filetree-image-btn" data-button-index="2" href="javascript:;" title="生成文件树图片"><span class="g-button-right"><em class="iconfont-zfdev-filetree icon-shuxing" title="生成文件树图片"></em><span class="text" style="width: auto;">生成文件树图片</span></span></a>';
+    let generateImageHTML = '<a class="g-button" data-button-id="zfdev-filetree-image" id="share-zfdev-filetree-image-btn" data-button-index="2" href="javascript:;" title="预览图"><span class="g-button-right"><em class="iconfont-zfdev-filetree icon-shuxing" title="预览图"></em><span class="text" style="width: auto;padding-left: 5px;">预览图</span></span></a>';
     let $generate_image_button = $(generateImageHTML);
     $("#bd-main .module-share-header .slide-show-right .x-button-box").prepend($generate_image_button);
     /**
